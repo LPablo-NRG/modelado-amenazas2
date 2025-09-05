@@ -1464,6 +1464,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -1547,7 +1548,6 @@
               ]
             },
             "id": "a5701374-e8cc-4516-9a98-29660c7fe73f",
-            "zIndex": 1,
             "data": {
               "type": "tm.Process",
               "name": "Controlador\nWeb",
@@ -1577,13 +1577,14 @@
                 "text": "Usuarios"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -1667,7 +1668,6 @@
               ]
             },
             "id": "f70412f8-0917-4a85-9cd2-a45c43e960d5",
-            "zIndex": 2,
             "data": {
               "type": "tm.Actor",
               "name": "Usuarios",
@@ -1675,23 +1675,35 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
+              "threats": [
+                {
+                  "id": "c44f0300-7232-4f90-b2ec-968e98c9c5b2",
+                  "title": "Phishing",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing / Spoofing",
+                  "description": "Un atacante podría obtener las credenciales de un usuario de forma fraudulenta",
+                  "mitigation": "Reforzar las políticas de seguridad de los usuarios",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 14,
+                  "score": "1"
+                }
               ],
-              "name": null
+              "threatFrequency": {
+                "spoofing": 1,
+                "repudiation": 0
+              }
             }
           },
           {
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -1712,12 +1724,31 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "92fe310b-cc89-40e7-9f7b-7b68f6397bcf",
+                  "title": "Man-In-The-Middle",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure / Brecha de información",
+                  "description": "Un atacante podría interceptar los mensajes enviados a través de la red",
+                  "mitigation": "Asegurar la comunicación con https",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 17,
+                  "score": "2"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Respuesta"
@@ -2056,7 +2087,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -2077,12 +2109,31 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "e00f2abe-c0a3-44fd-8290-679e3d9a6d5e",
+                  "title": "Man-In-The-Middle",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure / Brecha de información",
+                  "description": "Un atacante podría interceptar los mensajes enviados a través de la red",
+                  "mitigation": "Asegurar la comunicación con https",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 18,
+                  "score": "2"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Solicitud"
@@ -2117,16 +2168,19 @@
                 "text": "Páginas en disco"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 11,
             "ports": {
               "groups": {
                 "top": {
@@ -2210,7 +2264,6 @@
               ]
             },
             "id": "610f102d-f420-4918-9782-3c06a175fd35",
-            "zIndex": 11,
             "data": {
               "type": "tm.Store",
               "name": "Páginas en disco",
@@ -2218,13 +2271,40 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "9f59c672-7daf-456b-8e8d-844c00004c3a",
+                  "title": "Cross-site Scripting",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering / Manipulación",
+                  "description": "Un atacante podría modificar los archivos de las páginas almacenados en el disco",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 19,
+                  "score": "2"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -2241,13 +2321,14 @@
                 "text": "Proceso de\ninicio de\nsesión"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 12,
             "ports": {
               "groups": {
                 "top": {
@@ -2331,7 +2412,6 @@
               ]
             },
             "id": "4b6f8200-4a47-49b9-a05c-5b9695aa85a8",
-            "zIndex": 12,
             "data": {
               "type": "tm.Process",
               "name": "Proceso de\ninicio de\nsesión",
@@ -2339,12 +2419,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "d1648c8a-ca11-44a1-b0e2-97c1b09d90b3",
+                  "title": "Ataque de fuerza bruta",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Elevation of privilege / Elevación de privilegios",
+                  "description": "Un atacante podría adivinar la contraseña de un usuario mediante el uso de bases de datos de contraseñas comunes para acceder a su cuenta",
+                  "mitigation": "Reforzar las políticas de seguridad en las contraseñas ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 15,
+                  "score": "1"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 1
+              }
             }
           },
           {
@@ -2361,16 +2463,19 @@
                 "text": "Base de datos"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 13,
             "ports": {
               "groups": {
                 "top": {
@@ -2454,7 +2559,6 @@
               ]
             },
             "id": "e04adb23-505f-4370-9b3d-de1f407f1888",
-            "zIndex": 13,
             "data": {
               "type": "tm.Store",
               "name": "Base de datos",
@@ -2462,13 +2566,33 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "1cfa8606-dee5-4275-97fc-e5b46df75d2a",
+                  "title": "Inyección SQL",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure / Brecha de información",
+                  "description": "Un atacante podría ejecutar un comando sql para obtener información relacionada al usuario que busca iniciar sesión",
+                  "mitigation": "Proteger las entradas",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 16,
+                  "score": "2"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             }
           }
         ]
@@ -2476,6 +2600,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "Guillermo Humberto Vera Amaro",
-    "threatTop": 13
+    "threatTop": 19
   }
 }
